@@ -52,19 +52,4 @@ public class AWSConfiguration {
 		return new BasicAWSCredentials(accessKey, secretKey);
 	}
 
-	@Bean
-	public AmazonS3Client amazonS3Client(AWSCredentials awsCredentials) {
-		AmazonS3Client amazonS3Client = new AmazonS3Client(awsCredentials);
-		amazonS3Client.setRegion(Region.getRegion(Regions.fromName(region)));
-		return amazonS3Client;
-	}
-
-	@Bean
-	public AmazonSNSClient amazonSnsClient(AWSCredentials awsCredentials) {
-		AmazonSNSClient amazonSnsClient = new AmazonSNSClient(awsCredentials);
-		amazonSnsClient.setRegion(Region.getRegion(Regions.fromName(region)));
-		return amazonSnsClient;
-	}
-
-
 }
